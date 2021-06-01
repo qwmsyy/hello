@@ -1,0 +1,401 @@
+307535498
+412713827
+
+chenhe8888
+chvszz1030
+
+2417347
+
+gold   0.78623*10+3.0622   10.9245
+purple 2.3587*10+8.42809   32.01509
+blue   3.42306*10+15.48271 49.91331
+gStar 4.92289
+pStar 9.84578
+res 17.23011
+time 12.92258
+book 21.53764
+
+1755401 321
+
+攻10 15 20 25/70 2 -72 15？
+防10 15 20 25/70 2 -72 15？
+生15 25/40 2 1 1 1 1 -46 10？
+速度30
+
+<color=red><size=30>道明馆</size></color>
+
+http://111.7.189.22/amobile.music.tc.qq.com/C400000n57Y03eNvvF.m4a?
+guid=8117053560&
+vkey=58D77560A2BAB889E2B7F9E4682662E38D71E09ECFBD401583B6D4FD4FC75E9E1BB77562D60DBCADF8F0B3D69AD8D6F7F0FFFCAF213BC4FE&
+uin=6147&
+fromtag=66
+
+http://111.7.189.20/amobile.music.tc.qq.com/C400000ujWqV3POXD8.m4a?
+guid=8117053560&
+vkey=6FC5FFB17DA262C26C3E6613BEAE15CBCC8C4EE155392038F748C0CFC87887968B554384C95159F0A034939B006AEBB7EC186A5C2F1ED7EC&
+uin=6147&
+fromtag=66
+
+37  https://v.qq.com/x/cover/m441e3rjq9kwpsc/n0029iv6xsm.html
+	https://v.qq.com/x/cover/m441e3rjq9kwpsc/e00297fvh8c.html
+	https://v.qq.com/x/cover/m441e3rjq9kwpsc/x0029fi8g5f.html
+	https://v.qq.com/x/cover/m441e3rjq9kwpsc/x0029mu5avs.html
+	
+41	https://v.qq.com/x/cover/m441e3rjq9kwpsc/h003065spwu.html
+	https://v.qq.com/x/cover/m441e3rjq9kwpsc/p0030dxx286.html
+	https://v.qq.com/x/cover/m441e3rjq9kwpsc/t0030oucbdd.html
+	https://v.qq.com/x/cover/m441e3rjq9kwpsc/o00301ova85.html
+	https://v.qq.com/x/cover/m441e3rjq9kwpsc/m0030a5hfoi.html
+
+46 	https://v.qq.com/x/cover/m441e3rjq9kwpsc/b0030n6ydzg.html
+	https://v.qq.com/x/cover/m441e3rjq9kwpsc/s0030yz79ai.html
+	https://v.qq.com/x/cover/m441e3rjq9kwpsc/z0030kuc8p9.html
+	https://v.qq.com/x/cover/m441e3rjq9kwpsc/s0030xyjlgv.html
+	https://v.qq.com/x/cover/m441e3rjq9kwpsc/d00309oy7b5.html
+
+51
+
+mssteam10
+MS211339
+
+
+256 269 286 302
+ 13 17 16
+
+blob:https://www.by3g1p85nf9a325p125br5.com:52789/2fccdb20-7f12-43fb-9c53-e60294aecd9c
+
+blob:https://www.by3g1p85nf9a325p125br5.com:52789/5b7a468f-e159-4845-8da6-63a9ae41e41b
+
+blob:https://www.by3g1p85nf9a325p125br5.com:52789/33f5ab71-a79f-4b2a-be7f-fa48a53eb481
+
+https://webplay.weilekangnet.com:59666/data6/A3C66A118D3C14C5/267937877A8627C2/play.m3u8?_KS=a0a96677b4e4ee04dc04e60bdccde4fe&_KE=1614420683
+https://webplay.weilekangnet.com:59666/data7/B673899C18A31B68/B90081659BCC8C65/play.m3u8?_KS=f55b1197bed3218442de96fca92cf9df&_KE=1614423784
+
+#F3F4F7 #FEFEFF
+
+建筑 2*2 路1
+火 6*8 10*12 22*22 22*22  | 1*1 2*2 2*4.
+警 6*8 12*12 24*24 22*22  | 1*1 2*2 2*4。
+医 8*8 12*12 24*24 22*22   | 1*1 2*2 2*4.
+
+12*12 5+2+5 
+6*8 3+1+3 4+1+4
+8*8 4+1+4
+
+---------
+   *
+  6*8
+
+
+1*1
+
+
+
+
+				  j
+00 00 0  00 00   00 00 | 00 00 00     
+00 00 0  00 00   00 00 | 00 00 00 j h
+00 00 0  00 00   00 00 | 00 00 00
+00 00 0  00 00   00 00 | 00 00 00  
+0  0  医 0  0    — — — — — — — — —
+00 00 0  00 00   00 00 | yj 00 00
+00 00 0  00 00   00 00 | h  00 00
+00 00 0  00 00	 00 00 | 00 00 00
+00 00 0  00 00   00 00 | 00 00 00
+				 00 00 | 00 00 00 j
+				 00 00 | 00 00 00
+				  h 		   h
+
+
+
+  h
+	   00 | 00 00 | 00 00 00	
+       00 | 00 00 | 00 00 00 -
+	  
+	   00 | 00 00 | 00 00 	00
+	   00 | 00 00 | 00 00 	00  
+—  	—  — —| — — — — — — — — —
+00 	00 jh | 00 00 | yj 00 	00
+00 	00    | 00 00 | h  00 	00
+	   00 | 00 00 | 00 00 	00
+	   00 | 00 00 | 00 00 	00
+	  
+ 	   00 | 00 00 | 00 00 	00
+	   00 | 00 00 | 00 00 	00
+
+
+5*7
+				  00
+				  00
+				  
+				  00
+				  00
+				  
+				  00
+				  00
+				  
+				  00
+				  00
+				  
+				  00
+				  00
+	--------------------
+00 00 00 00 00 | h h | 00 | 00 | 00 | 00 
+		       | j y | 00 | 00 | 00 | 00 
+		       | j y |	  |
+			   |  00 |    |
+			   |  00 |    |
+		-------------------
+				  00
+				  00
+	  ------------------------- 	  
+				  00
+				  00
+		-------------------	  
+				
+				  
+	testyao    fGrwpZBRDeHA5PpW    121.36.94.44
+	yaoyaotest_nyjianzhan_com    TcXCMGMcE7Xasszn
+
+121.36.94.44:2122
+
+Ms211339
+
+1.
+	1）写死的，修改显示的位置
+	2）从数据库获取。在数据库添加一列属性，根据指定的排序设置值，查询时指定顺序（order）
+2.
+	1）增加模块的高度
+	2）修改样式：取消width和overflow属性
+3.
+	NaN:nat a number 非数字类型
+	如果是输入框：设置placeholder属性及样式
+		文本框：修改内容
+4.在右侧增加image，显示提交文件的缩略图。
+
+
+6667490848 998705
+
+
+A:http://www.a.com/index/index/hello/id/1.html
+
+B:http://www.a.com/index/index/hello?id=1
+
+C:http://www.a.com/index/index/hello?name=12aa
+
+D:http://www.a.com/index/index/hello?name=aa123dd
+
+dump($this->request->param());//所有参数，返回数组
+
+dump($this->request->param(‘id’));//具体参数，返回字符串
+
+dump($this->request->get(‘id’));//只对B类url生效
+
+dump($this->request->param(‘name’,‘aaa’));//如果没有name参数传递，设置默认值，返回字符串aaa
+
+dump($this->request->param(‘name’,‘1’,‘intval’));对接收的参数转整型，A类url返回默认值1，C类URL返回12，D类url返回0
+
+
+
+
+http://tp.com/index.php/index/login?name=李四&password=hell
+
+模板：
+{__('xxx')} 从lang文件夹获取 可进行翻译
+{:xxx()} php中的方法
+{$xxx} 从控制器（controller）$this->view->assign() 传递
+{__CONTENT__} 在控制器中 protected $layout = 'xxx'声明;xxx为layout目录下的文件名（xxx.html）；可以将{__CONTENT__}内容替换为模板文件。
+
+?:
+{}作用
+
+
+php
+没有{}
+
+
+$url:string(0) "" 
+url:/index/user/login.html?url=
+
+
+123@163.com
+123456
+
+
+fastadmin 登录问题：显示红色的OK 同一个账号总会出现两次需要登录的情况
+	发现fastadmin的默认登录验证会对 ip进行对比。 将数据库保存的最后一次登录ip与当前ip比较，
+	如果不相同则会跳转到登录页重新登录，并更新当前ip地址
+	
+	application/admin/library/Auth.php 中的isLogin方法下
+	if (!isset($admin['loginip']) || $admin['loginip'] != request()->ip(0, false)) {
+           return false;
+ }
+ 
+ {
+	"id":2,
+	"group_id":0,
+	"username":"msqw",
+	"nickname":"msqw",
+	"password":"903faba6a65d84462b28a3ddb611f899",
+	"salt":"KQpDql",
+	"email":"123@163.com",
+	"mobile":"15645678912",
+	"avatar":"data:image\/svg+xml;
+	base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxMDAiIHdpZHRoPSIxMDAiPjxyZWN
+	0IGZpbGw9InJnYigxNjAsMjI5LDE3NCkiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48L3JlY3Q+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LXNpemU9IjUwIiB0ZXh0LWNvcHk
+	9ImZhc3QiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRleHQtcmlnaHRzPSJhZG1pbiIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPk08L3RleHQ+PC9zdmc+",
+	"level":1,
+	"gender":0,
+	"birthday":null,
+	"bio":"",
+	"money":"0.00",
+	"score":0,
+	"successions":1,
+	"maxsuccessions":1,
+	"prevtime":1616650965,
+	"logintime":1616652425,
+	"loginip":"127.0.0.1",
+	"loginfailure":0,
+	"joinip":"127.0.0.1",
+	"jointime":1616634705,
+	"createtime":1616634705,
+	"updatetime":1616652425,
+	"token":"",
+	"status":"normal",
+	"verification":
+	{"email":0,"mobile":0},"url":"\/u\/2"}
+	{
+		"code":1,
+		"msg":"登录成功",
+		"data":"",
+		"url":"\/index\/user\/index.html",
+		"wait":3
+	}
+ 
+ 
+{
+	code: 0, 
+	msg: "密码不正确", 
+	data: {
+		token: "18749a2de9cbc46a6fb853c24c29591c"
+	}, 
+	url: "", 
+	wait: 3
+}	
+
+php存在类库加载顺序，可能出现方法未定义错误
+
+伪静态 隐藏tp的入口文件（index.php）
+
+单应用请求url  不需要应用名
+		http://localhost/index.php/HelloWorld/hello 
+		http://localhost/hello_world/hello
+
+多应用请求url
+
+15139013132
+
+zixunList getArcitle 
+recommendlist  gettuijian 
+https://peisen.nyjianzhan.com/addons/xshop/Article/zixunlist?id=18&ordertype=0&page=1&searchname=%E8%AE%BE
+https://peisen.nyjianzhan.com/addons/xshop/Guangchang/recommendlist?page=1&article_type=1&searchname=qw&ordertype=0
+
+https://peisen.nyjianzhan.com/addons/xshop/Product/getList?goodstype=2&page=1&cat_id=6 id变化 积分商城 getNewList
+ 
+https://peisen.nyjianzhan.com/addons/xshop/Product/getList?goodstype=0&page=1&cat_id=9 精品商城
+
+https://peisen.nyjianzhan.com/addons/xshop/Product/getList?goodstype=1&page=1&cat_id=1&kw= 一小时送货到家
+
+Category
+https://peisen.nyjianzhan.com
+/addons/xshop/Category/index?id=0 获取分类内容
+ 
+3 wanderTheAlleys 原因：积分商城出现无内容情况
+积分商城分离出来，单独请求所有可以使用积分兑换的内容
+7  petHome 
+	在下方天用于显示提示信息的列表  添加列表中单元的点击事件 
+	后端添加根据关键字搜索内容标题的接口
+
+wqssoft123.
+
+async delClue(row) {
+       var res = await this.$confirm("删除当前信息, 是否继续?", "提示", {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning",
+        }).catch(err=>err)
+     if(res==="confirm"){
+       delClue({ id: row.id }).then(res => {
+         this.$message.info(res.msg)
+         this.getLists()
+       })
+     }else{
+       this.$message.info("取消删除")
+     }
+    },
+
+
+
+http://console.weiqisheng.net/index.php/Enterprise/getCompanyInfo
+
+http://crm.weiqisheng.net/index.php/Customer/lists
+
+render: h => h(App)
+
+render: function (createElement) {
+    return createElement(App);
+}
+
+render (createElement) {
+    return createElement(App);
+}
+
+render (h) {
+    return h(App);
+}
+
+h => h(App);
+
+import App from './App'
+new Vue({
+    el: '#root',
+    template: '<App></App>',
+    components: {
+        App
+    }
+})
+
+$mount(’#app’) ：手动挂载到id为app的dom中的意思 
+该方法是直接挂载到入口文件index.html 的 id=app 的dom 元素上的
+
+dNEhHTz3ZTGMpz4z
+FaxpfX8KCiPE4siC
+
+with 
+预载入查询
+将外键表的数据查出来一起返回
+
+<!--{:Form::selectpage('row[name]','val','url','field','primaryKey'
+            ['class'=>'form-control selectpicker',
+                'data-rule'=>'required',
+               'data-source'=>"sendsms/smsmanage/getUserGroups"])}-->
+			    <div class="form-control">
+        {:Form::selectpicker('sname',$groups,0,['class'=>'form-control selectpicker','data-rule'=>'required'])}
+    </div>
+
+fastadmin
+新建controller 需要添加namespace
+否则会出现找不到控制器
+
+
+
+
+
+
+
+
+
+
+
+
+
