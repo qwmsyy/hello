@@ -1,0 +1,240 @@
+extract() 函数从数组中将变量导入到当前的符号表
+该函数使用数组键名作为变量名，使用数组键值作为变量值
+explode() 字符串分割为数组
+json_encode() 数组转json存数据库
+json_decode() 对JSON格式的字符串进行解码,第二个参数为true 时，将返回 array 而非 object 。
+
+
+[{"value":"\u6c34\u91cc","is_answer":"1","number":"A","key":"0"},
+{"value":"\u5929\u4e0a","is_answer":"","number":"B","key":"1"},
+{"value":"\u5730\u4e0a","is_answer":"","number":"C","key":"2"},
+{"value":"\u6d77\u91cc","is_answer":"1","number":"D","key":"3"},
+{"value":"\u6e56\u91cc","is_answer":"1","number":"E","key":"4"}]
+
+单选 不同选项有分值 数据库存储各个选项的分值 组成的字符串
+多选 。。。 
+在添加界面 没有正确答案 需要填写分值
+
+简答 有答案即可分 可以没有正确答案 | 选项 添加 删除
+填空 有答案即可分 
+
+判断 与考试类似 |选项 分数 
+ 
+数据库添加区分考试和问卷的标识  在统计分数/结果时区分
+testtype tinyint 默认为0 考试
+allscore 分值
+
+htCKNycrSwbwcrLy
+
+地区 总分？平均分
+{code: 1, msg: "ok", time: "", data: "河南5北京市28河南省0辽宁省2河北省0内蒙古自治区14"}
+
+$data=$test_data->Distinct(true)->field('descriprion')->order('description desc')->select();
+//利用group方法去重
+$data=$test_data->group('description')->order('description desc')->select();
+
+http://qiyun.713cloud.com/exam/api.exam/paperdetail
+
+空、false、null、0、'0',array()、''、
+
+{"code":1,"msg":"ok","time":"","data":"
+单选!北京市|1.163823;
+判断!北京市|1.163823;
+多选!北京市|1.163823;
+简答!北京市|1.163823;
+你是个_______!北京市|1.163823;
+今天吃____?!北京市|1.163823;"}
+
+publish_num int 
+
+userlist id ---省份 
+
+id paper_id publish_nums(多个省份的发放量）
+1   4       [{"pro":"河南","num":"5"},{"pro":"河南省","num":"5"},{"pro":"辽宁省","num":"1"}]
+列表需要循环 根据省份
+
+//生成Android密钥
+keytool -genkey -alias testalias -keyalg RSA -keysize 2048 -validity 36500 -keystore test.keystore
+keytool -list -v -keystore test.keystore  
+icloud 密码：
+
+589ea8d3732a31a07f1ba4dee0aa36e8
+
+Ms211339 account.dcloud.net.cn
+
+sql_l_br_ee_cn
+xp7kXG6j62KWMa4F
+
+ftp_l_br_ee_cn
+YztC2zJEpHedahKZ
+
+Integrity constraint violation: 1062 Duplicate entry
+原因:要操作的数据表id没有设置自增,导致出现id为0的情况
+解决方法:给该数据表的id字段设置自增
+
+fastamdin 导入数据 自增字段（一般是主键）不需要填写 否则会出现“操作成功” 但数据未添加的情况
+流程
+1.在控制器中添加如下代码
+public function import(){
+    return parent::import();
+}
+
+2、在index.html中的build_toolbar方法添加import，如下
+{:build_toolbar('refresh,add,edit,del,import')}
+新版本已无需要修改build_toolbar方法 
+
+3、在模块对应的JS中添加import_url，如下
+Table.api.init({
+    extend: {
+        index_url: 'example/index',
+        add_url: 'example/add',
+        edit_url: 'example/edit',
+        del_url: 'example/del',
+        import_url: 'example/import',
+        multi_url: 'example/multi',
+        dragsort_url: '',
+        table: 'category',
+    }
+});
+温馨提示：
+1、上传只支持xls、xlsx、csv三种格式的数据，第一行数据为数据表字段注释，因此请务必为你的数据表添加好注释。
+2、请注意你的上传配置文件application/extra/upload.php务必支持xls、xlsx、csv这三种格式，如果启用了第三方云存储插件，务必在插件管理云储存配置中添加格式支持。
+3、请务必注意你导入的Excel的数据格式必须和Mysql数据表格式相同，例如你的createtime字段是int，但你的excel中是string,导入时不会做任何数据转换。
+4、导出的表格不是标准的xls格式，如果需要再次导入需要转换为标准xls格式
+
+时间戳转成正常日期的公式:
+B1=(A1+8*3600)/86400+70*365+19
+其中A1表示当时的1249488000数值
+其中B1就是你需要的结果，B1单元格属性改成日期格式就可以了。
+正常日期转为时间戳格式公式：
+A1=(C1-70*365-19)*86400-8*3600
+其中C1表示当时的1249488000数值
+ 
+thinkphp 查询数据库数据根据两个字段group，且统计条数
+->field('group_id,count(group_id) as num')
+->where("")
+->group('group_id')
+->select();
+
+时间必须是int型的时间戳，
+可通过=(C1-70*365-19)*86400-8*3600来把=now()转化 但需要的是数值,不是公式,
+因此需要把当前值复制后，粘贴为文本
+
+时间戳自动添加  
+// 自动写入时间戳字段
+protected $autoWriteTimestamp = 'int';
+// 定义时间戳字段名
+protected $createTime = 'createtime';
+protected $updateTime = 'updatetime';    
+
+[{"name":"罗山","num":"8"},{"name":"测试","num":"4"}]
+简答不要answer 要score
+
+{:count(json_decode($row.answer,true))}
+{for start="1" end="count(json_decode($row.answer,true))"}
+<input class="col-xs-6 col-sm-4" type="text" value=1 name="">
+<input class="col-xs-6 col-sm-4" type="number" value=2>
+{/for}
+
+{:json_decode($row.answer,true)[0]['value']}
+{$a = count(json_decode($row.answer,true))}
+{for start="1" end="$a" name="i"}
+<input class="col-xs-6 col-sm-4" type="text" value='json_decode($row.answer,true)[$i]["value"}' name="">
+<input class="col-xs-6 col-sm-4" type="number" value=json_decode($row.answer,true)[$i]["singleSocre"}>
+{/for}
+
+LihC2DiCpPd8yfzw
+
+学员的信息 如何导入（id，姓名，电话，年级，家庭住址， 辅导老师 ，录单时间）（id 学员id 佣金id 是否结算 操作者）（佣金类型 金额）
+授权（没有账号登录？）？
+学员状态如何改变（只能修改状态，其余信息不用管）？ 
+结算佣金？（佣金手动填写）
+
+后台选择佣金和输入金额 结算佣金
+
+简答
+短信
+用户详情
+{foreach name="$ifo['answer']" item="a" key="k1"}
+{foreach name=":explode(',',str_replace('|',',',$d.qa))" item="abc"}
+{if condition = "$abc eq $k1"}
+<p style="background-color: yellow"><span>{$a['number']}</span><span>{$a['value']}</span></p>
+{else /}<p><span>{$a['number']}</span><span>{$a['value']}</span></p>
+{/if}
+{/foreach}
+{/foreach}
+{:print_r(explode(',',str_replace('|',',',$d.qa)))}
+
+substr_count
+
+关联模型：
+模型方法	关联类型
+hasOne		一对一HAS ONE
+belongsTo	一对一BELONGS TO
+hasMany		一对多 HAS MANY
+hasManyThrough	远程一对多 HAS MANY THROUTH
+belongsToMany	多对多 BELONGS TO MANY
+morphMany		多态一对多 MORPH MANY
+morphTo			多态 MORPH TO
+
+同一个命名空间下，直接使用模型名称就行，如果不在同一个命名空间下，则需要给出完整的类名
+$this->belongsTo('Cate');
+return $this->belongsTo(\app\common\Cate::class);//ccccc 一个带引号 一个::class
+
+find() 返回一条记录
+column() 返回数组
+select() 返回所有结果
+
+with方法中的关联方法名可以是实际的关联定义方法名，也可以是关联方法名的小写+下划线转换名
+withCount
+fetchSql用于直接返回SQL而不是执行查询，适用于任何的CURD操作方法。
+echo Db::table('user')->fetchSql(true)->find(1);
+输出结果为：
+SELECT * FROM user where `id` = 1
+
+Db::query("select * from think_user where status=:id", ['id' => 1]);
+分布式数据库
+从主库读取，可以使用
+Db::query("select * from think_user where status=:id", ['id' => 1], true);
+Db::execute("update think_user set name='thinkphp' where status=1");
+Db::query("select * from think_user where id=? AND status=?", [8, 1]);
+Db::execute("update think_user set name=:name where status=:status", ['name' => 'thinkphp', 'status' => 1]);
+
+oIOL35LKHboIkAgNLaJ082uqcgwg
+oaV0D5DT7cltTLuAXiw1ZQzGOfLY
+ovmQl5bJZeau5RGh-aWeJKvJR-SY
+
+fastadmin点击字段名称排序 sortable:true
+{
+	"list":[{"id":0,"name":30},{"id":1,"name":200},{"id":2,"name":300},{"id":3,"name":400},{"id":4,"name":500}],
+	"total":5}
+
+
+15878945875
+
+wx
+data		Object/String	开发者服务器返回的数据
+statusCode	Number			开发者服务器返回的 HTTP 状态码
+header		Object			开发者服务器返回的 HTTP Response Header
+只要成功收到服务器返回，无论HTTP状态码是多少都会进入success回调。因此开发者自己通过对回包的返回码进行判断后再执行后续的业务逻辑。
+
+开发版和体验版的小程序不会校验域名。 右上/详情/本地设置/不校验合法域名
+开发版 体验版 正式版
+develop trial release
+未授权 已授权
+学校 班级
+
+
+对于较长的数据字段 数据库设计应该注意（超出不菲不会显示，而且还不会报错）
+
+?action=get_post_info&volumn=1&lang=zh_CN&book=miniprogram&docid=0000a24f9d0ac86b00867f43a5700a
+
+func_get_args()     这个函数返回的是包含当前函数所有参数的一个数组
+func_get_arg()       函数返回的是指定位置的参数的值
+func_num_args()  这个函数返回的是当前函数的参数数量 返回的是数字
+array_shift 删除数组中的第一个元素（red），并返回被删除元素的值
+
+
+
+
+
