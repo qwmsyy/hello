@@ -170,19 +170,35 @@
 				})
 			},
 			// 笛卡尔积算法
+			/*
+				arr.reduce(function(prev,cur,index,arr){
+					...
+				}, init);
+				ES6:
+				arr.reduce((prev,cur,index,arr)=>{
+					...
+				}, init);
+				arr 表示原数组
+				prev 上次调用时的返回值 或初始化值init
+				cur 当前正在处理的数组元素
+				index 当前正在处理的数组元素的索引 若提供init值，为0，否则为1
+				init 初始值
+				常用的参数只有两个：prev 和 cur
+				https://www.cnblogs.com/amujoe/p/11376940.html
+			*/
 			cartesianProductOf(...args) {
 				return args.reduce(
 					(total, current) => {
 						let ret = []
 						total.forEach((a) => {
 							current.forEach((b) => {
-							ret.push(a.concat([b]))
+								ret.push(a.concat([b]))
+							})
 						})
-					})
-					return ret
-				},
-				[[]],
-			)
+						return ret
+					},
+					[[]]
+				)
 			}
 		}
 	}
