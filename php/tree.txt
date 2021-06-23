@@ -1,0 +1,38 @@
+
+// 获取地区的三级联动数据
+function getArea($data, $parent_id = 0)
+{
+    $list = array();
+    foreach ($data as $v) {
+        if ($v['parent_id'] == $parent_id) {
+            $value = [];// 将v改成value避免大量的无用数据 lng lat...
+            $value['label'] = $v['name'];
+            $value['value'] = $v['city_id'];
+            $value['children'] = getArea($data, $v['city_id']);
+            if (empty($value['children'])) {
+                unset($value['children']);
+            }
+            array_push($list, $value);
+        }
+    }
+    return $list;
+}
+
+// 获取树形数据的列表 id name pid [level]
+function tree($data,$pid=0, $level=0)
+{
+    static $tree = [];
+    foreach($data as $v){
+        if($v['gc_parent_id'] == $pid){
+//            $v['level'] = $level;
+            if($pid == 0){
+                $v['gc_name'];
+            }else{
+                $v['gc_name'] = str_repeat('　', $level).'└─'.$v['gc_name'];
+            }
+            $tree[]=$v;
+            tree($data, $v['gc_id'], $level+1);
+        }
+    }
+    return $tree;
+}
