@@ -1,0 +1,29 @@
+// 更新详情 
+protected function updetail($new = null){
+	$content_box = [];
+	if ($new){
+		if (isset($new['id'])){
+			$model = $this->model;
+			$id = $new['id'];
+			unset($new['id']);
+			$old = Db::table($this->prefix . $model)->where($model.'_id',$id)->find();
+			Db::table($this->prefix . $model)->where($model.'_id',$id)
+				->update($new);
+			foreach ($new as $key => $value){
+				$res = Db::query("show full COLUMNS FROM " . $this->prefix . $model);
+				foreach ($res as $item){
+					if ($item['Field']==array_search($new[$key],$new)){
+						if ($old[$key]!=$new[$key]){
+							$str = "将".'‘'.$item['Comment'].'’'.'由'.' '.$old[$key].' '." 修改为 ".' '.$new[$key];
+							$content_box[] = $str;
+						}
+					}
+				}
+			}
+		}
+	}
+	if (!$content_box){
+		$content_box[] = '无更新内容';
+	}
+	return $content_box;
+}
