@@ -36,4 +36,4 @@ $RECYCLE.BIN/
 bower_components
 package-lock.json
 
-secret
+/secret/
