@@ -49,3 +49,23 @@ Temporary Items
 .idea
 bower_components
 package-lock.json
+
+
+
+
+# /mtk/ 过滤整个文件夹
+# *.zip 过滤所有.zip文件
+# /mtk/do.c 过滤某个具体文件
+# !/mtk/one.txt 指定要将哪些文件添加到版本管理中 多了一个感叹号
+# 解释： 管理/mtk/目录中的one.txt文件，这个目录中的其他文件都不需要管理
+
+#!/mtk/one.txt
+
+
+
+
+
+
+
+
+
