@@ -1,0 +1,34 @@
+pt (point，磅)：是一个物理长度单位，指的是72分之一英寸
+px (pixel，像素)：是一个虚拟长度单位，是计算机系统的数字化图像长度单位 。Windows系统默认是96dpi，Apple系统默认是72dpi。
+em(相对长度单位，相对于当前对象内文本的字体尺寸)：是一个相对长度单位，如：0.8em, 1.2em,2em等。通常1em=16px。
+pt = 1/72(英寸), px = 1/dpi(英寸)
+因此 pt = px * dpi / 72
+以Windows 下的 96dpi 来计算，1 pt = px * 96/72 = px * 4/3
+字号 pt   px   em 
+小四 12pt 16px 1em
+_______https://www.runoob.com/w3cnote/px-pt-em-convert-table.html
+em是相对于其父元素来设置字体大小的，一般都是以<body>的“font-size”为基准。这样就会存在一个问题，进行任何元素设置，都有可能需要
+知道他父元素的大小。
+Rem是相对于根元素<html>，这样就意味着，我们只需要在根元素确定一个参考值。
+em相对于父元素，rem相对于根元素。
+
+vw vh css3自适应布局单位
+视口单位(Viewport units) 
+
+在桌面端，视口指的是在桌面端，指的是浏览器的可视区域；而在移动端，它涉及3个视口：Layout Viewport（布局视口），Visual Viewport（视觉视口），Ideal Viewport（理想视口）。
+
+视口单位中的“视口”，桌面端指的是浏览器的可视区域；移动端指的就是Viewport中的Layout Viewport, “视区”所指为浏览器内部的可视区域大小，即window.innerWidth/window.innerHeight大小，不包含任务栏标题栏以及底部工具栏的浏览器区域大小。。
+
+ 根据CSS3规范，视口单位主要包括以下4个：
+
+      1.vw：1vw等于视口宽度的1%。
+
+      2.vh：1vh等于视口高度的1%。
+
+      3.vmin：选取vw和vh中最小的那个。
+
+      4.vmax：选取vw和vh中最大的那个。
+
+ vh and vw：相对于视口的高度和宽度，而不是父元素的（CSS百分比是相对于包含它的最近的父元素的高度和宽度）。1vh 等于1/100的视口高度，1vw 等于1/100的视口宽度。
+ 
+ 字体常用大小 12 14px 16 18 #333 #999 #f3f3f3 间距：20px 10px
