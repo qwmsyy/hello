@@ -1,0 +1,31 @@
+function Descartes()
+{
+    // 获取传入的参数
+    $t = func_get_args();
+    // 判断参数个数是否为1
+    if (func_num_args() == 1) {
+        // 回调当前函数，并把第一个数组作为参数传入
+        return call_user_func_array(__FUNCTION__, $t[0]);
+    }
+    // 将 $t 中的第一个元素移动到 $a 中，$t 中索引值重新排序
+    $a = array_shift($t);
+    if (!is_array($a)) {
+        $a = [$a];
+    }
+    // 分割数组 $a ，为每个单元1个元素的新数组
+    $a = array_chunk($a, 1);
+    do {
+        $r = [];
+        $b = array_shift($t);
+        if (!is_array($b)) {
+            $b = [$b];
+        }
+        foreach ($a as $p) {
+            foreach (array_chunk($b, 1) as $q) {
+                $r[] = array_merge($p, $q);
+            }
+        }
+        $a = $r;
+    } while ($t);
+    return $r;
+}
