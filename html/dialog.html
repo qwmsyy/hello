@@ -1,0 +1,152 @@
+<html>
+<head>
+<style>
+.mask-wrapper{
+	position: fixed;
+	background: rgba(0,0,0, 0.5);
+	z-index: 100001;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.mask-box{
+	position: relative;
+}
+.mask-content{
+	border: 1px  solid #efefef;
+	width: 80%;
+	margin: auto;
+	margin-top: 150px;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #999;
+	border: 1px solid rgba(0,0,0, .2);
+	border-radius: 6px;
+	box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+	outline: 0;
+	overflow: hidden;
+	transform: rotateX(90deg);
+	transition: transform .3s ease-out;
+}
+.mask-header{
+	padding: 15px;
+	border-bottom: 1px solid #e5e55e;
+	font-size: 16px;
+	font-weight: bold;
+	min-height: 50px;
+}
+.mask-body{
+	position: relative;
+	padding: 15px;
+	max-height: 350px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+.mask-foot{
+	padding: 15px;
+	text-align: right;
+	border-top: 1px solid #e5e5e5;
+}
+.show-am{
+	transform: rotateX(0);
+}
+.close{
+	float: right;
+}
+</style>
+</head>
+<body>
+<div class="mask-wrapper">
+	<div class="mask-box">
+		<div class="mask-content">
+			<div class="mask-header">
+				<button class="close">&times;</button>
+				<span class="mask-header-title"></span>
+			</div>
+			<div class="mask-body">
+				<div class="mask-body-content" id="table-wrapper">
+				</div>
+			</div>
+			<div class="mask-foot">
+				<button class="btn btn-default">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+class Maskdialog{
+	constructor(config = {}){
+		this.cancle = config.cancle  || null;
+		this.title = config.title || "";
+		this.width = config.width || '80%';
+		this.setProps()
+		this.init();
+		this.renderTitle();
+		this.handle();
+	}
+	setProps(){
+		this.mask = document.querySelector(".mask-wrapper");
+		this.diaglogContent = document.querySelector(".mask-content");
+		this.closeIcon = document.querySelector(".mask-header>.close");
+		this.cancleBtn = document.querySelector(".mask-foot>.btn-default");
+		this.maskBody = document.querySelector(".mask-body");
+		this.titleNode = document.querySelector(".mask-header-title");
+		this.tableWrapper = document.querySelector(".mask-body-content");
+	}
+	init(){
+		this.diaglogContent.style.width = this.width;
+	}
+	show(){
+		this.mask.style.display = "block";
+		setTimeout(()=>{
+			this.diaglogContent.style.transform = "rotateX(0)"
+		},100)
+	}
+	hidden(){
+		this.mask.style.display = "none";
+		setTimeout(()=>{
+			this.diaglogContent.style.transform = "rotateX(90deg)"
+		},100)
+		this.tableWrapper.innerHTML = "";
+	}
+	handle(){
+	   this.mask.addEventListener('click',event=>{
+		   event.stopPropagation()
+		   if(event.target.classList.contains(".mask-wrapper") || event.target.classList.contains(".mask-box")){
+			   this.hidden();
+		   }
+	   },false)
+	   this.closeIcon.addEventListener("click",()=>{
+		   this.hidden()
+	   })
+	   this.cancleBtn.addEventListener("click",()=>{
+		   this.cancle && this.cancle instanceof Function && this.cancle() || this.hidden();
+	   })
+	}
+	render(domTemp){
+		if(domTemp instanceof HTMLElement){
+			domTemp = this.domTostring(domTemp)
+		}
+		this.maskBody.innerHTML = domTemp
+	}   
+	domTostring(node){
+		let temNode = document.createElement('div');
+		let clone_node = node.cloneNode(true);
+		temNode.appendChild(clone_node);
+		let str = temNode.innerHTML;
+		temNode = clone_node = null;
+		return str;
+	}
+	renderTitle(){
+		this.titleNode.innerHTML = this.title;
+	}
+}
+
+let mask = new Maskdialog({'cancle':'取消','title':'标题'});
+mask.render("11111111<p>prage</p><input placeholder='placeholder' />");//需渲染的dom 支持字符串模板和真实dom节点 
+mask.show();
+</script>
+</body>
+<html>
