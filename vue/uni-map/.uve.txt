@@ -1,0 +1,157 @@
+msChooseLocation() {
+// 可选
+// {
+// "longitude": 112.523308,
+// "name": "龙运小区",
+// "latitude": 33.00128,
+// "address": "八一路279号",
+// "errMsg": "chooseLocation:ok"
+// }
+var that =this
+uni.chooseLocation({
+	type: 'gci02',
+	success: (res) => {
+		that.dpwz = res
+		var point = new plus.maps.Point(res.longitude, res.latitude);
+		plus.maps.Map.reverseGeocode( point, {},
+			function(event) {
+				var address = event.address; // 转换后的地理位置
+				var point = event.coord; // 转换后的坐标信息
+				var coordType = event.coordType; // 转换后的坐标系类型
+				var reg = /.+?(省|市|自治区|自治州|县|区)/g;
+				// console.log(address.match(reg));
+				let addressList=address.match(reg)//.toString().split(",");
+				// that.dpwz.push({'province': addressList[0]})
+				if(addressList.length > 0){
+					that.dpwz['province'] = addressList[0];
+					that.dpwz['city'] = addressList[1];
+					that.dpwz['district'] = addressList[2];
+				}
+				console.log(that.dpwz)
+				// that.dpwz.push({'city': addressList[1]})
+				// that.dpwz.push({'district': addressList[2]})
+			},
+			function(e) {
+				console.log(e)
+			}
+		)
+		that.dzxr()
+		that.latitude=res.latitude
+		that.longitude=res.longitude
+		/* let arr =[
+				{
+						id:0,
+						longitude:res.longitude,
+						latitude:res.latitude,
+						name:res.address
+				}
+		]
+		let markers = []
+		for (var i=0;i<arr.length;i++){
+				markers=markers.concat({
+						id:arr[i].id,
+						latitude: arr[i].latitude,//纬度
+						longitude: arr[i].longitude,//经度
+						callout:{//自定义标记点上方的气泡窗口 点击有效
+							 content:arr[i].name,//文本
+							 color:'#ffffff',//文字颜色
+							 fontSize:10,//文本大小
+							 borderRadius:2,//边框圆角
+							 bgColor:'#00c16f',//背景颜色
+							 display:'ALWAYS',//常显
+						},
+				})
+		}
+		that.markers=markers */
+	},
+	fail(e) {
+		if(e)
+			that.notj(e.errMsg)
+		else
+			that.notj('未知错误')
+	},
+})
+},
+逆地址解析
+小程序不能使用 需要调用第三方服务（高德，腾讯）
+var point = new plus.maps.Point(res.longitude, res.latitude);
+plus.maps.Map.reverseGeocode( point, {},
+	function(event) {
+		var address = event.address; // 转换后的地理位置
+		var point = event.coord; // 转换后的坐标信息
+		var coordType = event.coordType; // 转换后的坐标系类型
+		var reg = /.+?(省|市|自治区|自治州|县|区)/g;
+		let addressList=address.match(reg)//.toString().split(",");
+		if(addressList.length > 0){
+			that.dpwz['province'] = addressList[0];
+			that.dpwz['city'] = addressList[1];
+			that.dpwz['district'] = addressList[2];
+		}
+	},
+	function(e) {
+		console.log(e)
+	}
+)
+
+
+
+import QQMapWX from '../../common/qqmap-wx-jssdk'
+onLoad(options) {
+	//感觉直接挂到vue.prototype上更好
+	this.qqmapsdk = new QQMapWX({
+		// 在腾讯平台自己申请的秘钥
+	key: 'MUZBZ-HJ8JI-3K74B-74NKG-G2OC5-H8ES1' 
+	})
+},
+
+msChooseLocation() {
+// 可选
+// {
+// "longitude": 112.523308,
+// "name": "龙运小区",
+// "latitude": 33.00128,
+// "address": "八一路279号",
+// "errMsg": "chooseLocation:ok"
+// }
+var that =this
+uni.chooseLocation({
+	type: 'gci02',
+	success: (res) => {
+		console.log(res)
+		that.latitude=res.latitude
+		that.longitude=res.longitude
+		that.getLocal(that.latitude,that.longitude)
+	},
+	fail(e) {
+		if(e)
+			that.notj(e.errMsg)
+		else
+			that.notj('未知错误')
+	},
+})
+},
+getLocal(latitude,longitude) {
+let that = this
+that.qqmapsdk.reverseGeocoder({ // 注意经纬度区别
+  location: {
+	latitude: latitude,
+	longitude: longitude
+  },
+  success: function (res) {
+		// var json = JSON.stringify(res);
+		// console.log(res.status)
+		if(res.status==0){
+			let address_component = res.result.address_component
+			// console.log(address_component)
+			var json = JSON.stringify(address_component);
+			// console.log(address_component.city)
+			that.shopinformation.city = address_component.city
+			that.shopinformation.province = address_component.province
+			that.shopinformation.county = address_component.district
+		}
+	},
+	fail: function (res) {
+		console.log(res)
+	},
+	})
+},
