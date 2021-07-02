@@ -1,0 +1,25 @@
+<style type="text/css">
+	:root {
+		--blue: #007bff;
+	}
+	* {
+		padding: 10px
+	}
+	#phone {
+		background-color: var(--blue);
+		width: 200px;
+		height: 200px;
+	}
+	p::before {
+		content: "\0022";
+		width: 100px;
+		opacity: .15;
+		font-size: 100px;
+		line-height: .85;
+		position: absolute;
+		left: -15px;
+		font-style: italic;
+	}
+</style>
+<div id="phone"></div>
+<p>I would love a different box model! I find it bizarre that padding and border add the width of an object, and would love to be able to give something like a textarea 100% width and 3px padding without worrying what it’s going to do the layout. Perhaps something like padding-inside as a new selector?</p>

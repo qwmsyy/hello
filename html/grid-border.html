@@ -1,0 +1,199 @@
+
+<style>
+	* {
+		// outline: solid #f00 1px !important;
+		// background: #000 !important;
+		// color: #fff !important;
+	}
+	.wrapper {
+	  display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	  gap: 10px;
+	  grid-auto-rows: minmax(100px, auto);
+	}
+	.one {
+	  grid-column: 1 / 3;
+	  grid-row: 1;
+	}
+	.two {
+	  grid-column: 2 / 4;
+	  grid-row: 1 / 3;
+	}
+	.three {
+	  grid-column: 1;
+	  grid-row: 2 / 5;
+	}
+	.four {
+	  grid-column: 3;
+	  grid-row: 3;
+	}
+	.five {
+	  grid-column: 2;
+	  grid-row: 4;
+	}
+	.six {
+	  grid-column: 3;
+	  grid-row: 4;
+	}
+	.sawtooth {
+    /* 相对定位，方便让before和after伪元素绝对定位偏移 */
+    position: relative;
+	overflow: hidden;
+}
+
+.sawtooth:before, .sawtooth:after {
+    content: ' ';
+    width: 0;
+    height: 100%;
+    /* 绝对定位进行偏移 */
+    position: absolute;
+    top: 10px;
+}
+
+.sawtooth:before {
+    /* 圆点型的border */
+    border-right: 10px dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    left: -5px;
+}
+
+.sawtooth:after {
+    /* 圆点型的border */
+    border-left: 10px dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    right: -5px;
+}
+.sawtooth1{
+    /* 画出一个半径为5px的透明的圆，透明圆以外都是#e24141颜色 */
+    background-image: radial-gradient(transparent 0, transparent 5px, #e24141 5px);
+    /* 截取上面生成的渐变图的一部分，相当于截取15px的正方形中有一个直径10px的透明圆点 */
+    background-size: 15px 15px;
+    /* 根据优惠券div大小进行微调 */
+    background-position: 8px 3px;
+	/*相对定位，让before伪元素方便定位 */
+    position: relative;
+	// background-size: 100px 100px;
+    // background-repeat: no-repeat;
+}
+.sawtooth1:before {
+    content: ' ';
+    display: block;
+    /* 用相同的颜色覆盖 */
+    background-color: #e24141;
+    /* 绝对定位，遮住中间所有的洞，只保留边角的锯齿 */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* 为锯齿保留的距离 */
+    left: 10px;
+    right: 10px;
+}
+.cro{
+    width: 100px;
+
+    height: 100px;
+
+    border: 1px solid #58C4E6;
+
+    position: relative;
+
+}
+
+.cro_left_top,.cro_right_top,.cro_left_bottom,.cro_right_bottom{
+    position: absolute;
+
+    width: 20px;
+
+    height: 20px;
+
+    border: 1px solid #fff;
+
+    z-index: 1;
+
+    background: #fff;
+
+}
+
+.cro_left_top{
+    top: -1px;
+
+    left: -1px;
+
+    border-radius:0px 0px 20px 0px;
+
+    border-bottom: 1px solid #58C4E6;
+
+    border-right: 1px solid #58C4E6;
+
+}
+
+.cro_right_top{
+    top: -1px;
+
+    right: -1px;
+
+    border-radius:0px 0px 0px 20px;
+
+    border-bottom: 1px solid #58C4E6;
+
+    border-left: 1px solid #58C4E6;
+
+}
+
+.cro_left_bottom{
+    left: -1px;
+
+    bottom: -1px;
+
+    border-radius:0px 20px 0px 0px;
+
+    border-top: 1px solid #58C4E6;
+
+    border-right: 1px solid #58C4E6;
+
+}
+
+.cro_right_bottom{
+    right: -1px;
+
+    bottom: -1px;
+
+    border-radius:20px 0px 0px 0px;
+
+    border-top: 1px solid #58C4E6;
+
+    border-left: 1px solid #58C4E6;
+
+}
+</style>
+
+<div class="wrapper">
+  <div class="one">One</div>
+  <div class="two">Two</div>
+  <div class="three">Three</div>
+  <div class="four">Four</div>
+  <div class="five">Five</div>
+  <div class="six">Six</div>
+</div>
+<div class="sawtooth" style="background:#e24141;width:400px;height:170px;"></div>
+<br/>
+<div class="sawtooth1" style="width:420px;height:170px;"></div>
+<br/>
+<div class="cro">
+	<div class="cro_left_top"></div>
+
+	<div class="cro_right_top"></div>
+
+	<div class="cro_left_bottom"></div>
+
+	<div class="cro_right_bottom"></div>
+</div>
+<div class="cro">
+	<div class="cro_left_top"></div>
+
+	<div class="cro_right_top"></div>
+
+	<div class="cro_left_bottom"></div>
+
+	<div class="cro_right_bottom"></div>
+</div>
