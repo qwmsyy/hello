@@ -1,0 +1,3 @@
+align-items 控制 flex 项在交叉轴上的位置。默认的值是 stretch
+ align-self 属性会覆盖 align-items 的行为
+justify-content 控制 flex 项在主轴上的位置 默认值是 flex-start
