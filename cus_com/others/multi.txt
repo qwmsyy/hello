@@ -1,0 +1,135 @@
+<view class="modal modal-bottom-dialog" v-show="!hideFlag">
+	<view class="modal-cancel" @click="hideModal"></view>
+	<view class="bottom-dialog-body bottom-positon" :animation="animationData">
+		
+		<view style="min-height:300px;background-color: #fff;border-radius: 30rpx; height:calc(100vh - 10px);">
+			<view class="ms-title" style="padding-top: 10rpx;display: flex;flex-direction: row;">
+				<text @click="msCancel" style="color: #ccc;padding: 5rpx 20rpx;flex: 1;text-align: left;">取消</text>
+				<text style="flex: 1;text-align: center;padding: 5rpx 20rpx;">标签选择</text>
+				<text @click="msConfirm" style="color: #0081FF;padding: 5rpx 20rpx;flex: 1;text-align: right;">确定</text>
+			</view>
+			<view class="ms-con" scroll-y="true">
+				<view class="checkedNo" :class="{ checkedYes: tags.indexOf(tag) != -1 }" v-for="(tag, i) in multiArrayTag" :key="i" @click="appointment(tag)">
+					{{ tag.name }}
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+data() {
+	return {
+		hideFlag: true,
+		animationData: {},
+		multiArray: [],
+		tags: [],
+		rtags: [],
+		vtags: [],
+	}
+}
+
+
+msCancel() {
+	this.tags = []
+	this.rtags = []
+	this.vtags = []
+	console.log(this.tags)
+	this.hideModal()
+},
+
+msConfirm() {
+	let that = this
+	let tags = this.tags
+	that.tags = []
+	that.rtags = []
+	that.vtags = []
+	if(tags.length > 0){
+		tags.map( i =>{
+			that.rtags.push(i['id'])
+			that.vtags.push(i['name'])
+		})
+	}
+	this.hideModal()
+},
+
+appointment(tag) {
+	// console.log(tag)
+	let that = this;
+	if (that.tags.indexOf(tag) == -1) {
+		that.tags.push(tag); //选中添加到数组里
+	} else {
+		that.tags.splice(that.tags.indexOf(tag), 1); //取消
+	}
+},
+showModal() {
+	this.tags = []
+	let animation = uni.createAnimation({
+		duration: 1000,//动画的持续时间
+	})
+	this.animation = animation; //将animation变量赋值给当前动画
+	setTimeout(() => {
+			this.hideFlag = false;
+			this.slideIn();//调用动画--滑入
+	}, 100);
+},
+hideModal: function () {
+	let animation = uni.createAnimation({
+		duration: 1000,//动画的持续时间 默认400ms
+		timingFunction: 'ease',//动画的效果 默认值是linear
+	})
+	this.animation = animation
+	setTimeout(() => {
+		this.hideFlag = true;
+		this.slideDown();//调用动画--滑出
+	}, 100);
+},
+slideIn: function () {
+	this.animation.translateY(0).step() // 在y轴偏移，然后用step()完成一个动画
+	//动画实例的export方法导出动画数据传递给组件的animation属性
+	this.animationData = this.animation.export();
+},
+//动画 -- 滑出
+slideDown: function () {
+	this.animation.translateY(20).step();
+	this.animationData = this.animation.export();
+},
+.modal{
+	position:fixed;
+	top:0; right:0;
+	bottom:0;
+	left:0; 
+	z-index:1000;
+}
+.modal-cancel{
+	position:absolute; 
+	z-index:2000; 
+	top:0; right:0; 
+	bottom: 0; left:0; 
+	background:rgba(0,0,0,0.3);
+}
+.bottom-dialog-body{
+	width:100%; 
+	position:absolute; 
+	z-index:3000; 
+	bottom:0; 
+	left:0;
+	height: 500rpx;
+	/* background:#dfdede; */
+}
+/* 底部弹出框 */
+.bottom-positon{
+  text-align: center;
+}
+.ms-title {
+		margin: 20rpx 0;
+	}
+	.checkedNo {
+		display: inline-block;
+		border-radius: 10rpx;
+		margin: 10rpx;
+		padding: 10rpx;
+		width: 30%;
+	}
+	.checkedYes {
+		background-color: #0081ff;
+		color: #ffffff;
+	}
