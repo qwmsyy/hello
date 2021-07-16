@@ -1,0 +1,70 @@
+color ：
+主灰色 #EcEcEc
+次灰色 #F7F7F7
+
+字体浅灰色 #B1B1B1
+		#777
+题目黑色 #212121
+
+绿色#2A9F49 #00BF63
+蓝 #2D8ADA
+
+弹窗、蒙版的关闭思路
+1. 通过点击关闭的按钮，图片进行关闭
+2. 点击灰色区域关闭
+	小程序貌似没有类似于vue的.self阻止事件向下传递功能 ，点击内容区域会触发蒙版区域的点击事件
+	处理给内容区域点击，但不做处理，并且阻止其冒泡行为 ，这样在点击内容区域就不会触发蒙版区域的点击事件
+	
+慎用框架 特别是样式中带'!important'的 改变radio样式 死活该不了， 最后发现colorUI中设置的样式 而且还是带!important
+radio 需要外层的radiogroup 来监听属性的变化
+红色的单选框：
+/*radio未选中时样式 */
+radio .wx-radio-input{
+	height: 30rpx;
+	width: 30rpx;
+	margin-top: -4rpx;
+	border-radius: 50%;
+	border: 2rpx solid #999;
+	background: #fff!important;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked {
+	border-color: #FF5757!important;
+	/* 居中 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before {
+	/* 去除对号 */
+	content: '';
+	width: 20rpx;
+	height: 20rpx;
+	border-radius: 50%;
+	background-color: #FF5757;
+}
+
+设置微信对象值 '好像不要[]也行'
+this.setData({
+	['arr[' + index + '].value']: 1
+})
+
+视图中双重循环
+子循环中 index 会覆盖 父循环的 index 
+而且最内层 能直接使用 item.v
+index 父索引 idx 子索引
+<view wx:for="{{Lists}}" wx:key="{{index}}">
+	<view class="item_title">{{item.name}}</view>
+	<view class="row_flex_warp">
+		<view class="row_flex_warp_item {{item.select?'item_selected':''}}" wx:for="{{item.list}}"
+			wx:for-index="idx" wx:key="{{item.id}}" catchtap="selItem" data-id="{{item.name}}"
+			data-index="{{index}}" data-idx="{{idx}}">
+			{{item.name}}
+		</view>
+	</view>
+</view>
+
+let id = e.currentTarget.dataset.id
+
+vedio上下黑边 objectFit="cover"
