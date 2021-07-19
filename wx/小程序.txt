@@ -68,3 +68,44 @@ index 父索引 idx 子索引
 let id = e.currentTarget.dataset.id
 
 vedio上下黑边 objectFit="cover"
+
+返回上个页面带参数
+当前页面：
+var pages = getCurrentPages();   //当前页面
+var prevPage = pages[pages.length - 2];   //上一页面
+prevPage.setData({
+       //直接给上一个页面赋值
+      addresschose: that.data.address[index],
+});
+wx.navigateBack({
+     //返回
+     delta: 1
+})
+不需要下面的似乎也可以
+要跳转的页面：
+onShow: function () {
+    let pages = getCurrentPages();
+    let currPage = pages[pages.length - 1];
+    if (currPage.data.addresschose) {
+        this.setData({
+            //将携带的参数赋值
+            address: currPage.data.addresschose,
+            addressBack: true
+      });
+    console.log(this.data.address, '地址')
+    }
+}
+
+一个页面由另一个页面通过 wx.navigateTo 打开，这两个页面间将建立一条数据通道：
+被打开的页面可以通过 this.getOpenerEventChannel() 方法来获得一个 EventChannel 对象；
+wx.navigateTo 的 success 回调中也包含一个 EventChannel 对象。
+这两个 EventChannel 对象间可以使用 emit 和 on 方法相互发送、监听事件。
+EventChannel.emit(string eventName, any args) 触发一个事件
+EventChannel.off(string eventName, function fn, any args) 取消监听一个事件。给出第二个参数时，只取消给出的监听函数，否则取消所有监听函数
+EventChannel.on(string eventName, function fn) 持续监听一个事件
+EventChannel.once(string eventName, function fn, any args) 监听一个事件一次，触发后失效
+文档是真tmd的简略 。。。。
+
+小程序中页面栈最多十层
+
+
