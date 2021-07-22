@@ -1,0 +1,100 @@
+https://www.cnblogs.com/hjk1124/p/12909944.html
+
+export default function reqeust(params) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: params.url,
+      method: params.method || 'get',
+      data: params.data || {},
+      success: res => {
+        resolve(res)
+      },
+      fail: err => {
+        reject(err)
+      }
+    })
+  })
+}
+
+// 感觉这个就可以了
+const baseURL = 'https://jiazhuang/zheshi/yige/gonggongurl';
+export default function reqeust(params) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: baseURL + params.url,
+      method: params.method || 'get',
+      data: params.data || {},
+      success: resolve,
+      fail: reject
+    })
+  })
+}
+
+使用：
+//页面内导入
+import reqeust from '../../request/one.js'
+// 页面的onload函数内使用
+onLoad: function () {
+reqeust({
+  url: 'https://xxxxxxxxxxxxxxxxxxxxxxxxxxx',
+})
+  .then(res => {
+  console.log(res)
+})
+  .catch(err => console.log(err))
+}     
+
+
+扩展内容：
+es6 导入导出
+// 常量的导出
+//public.js
+const demo = '使用export导出的常量,不可以重命名该常量,需要用大括号';
+export {
+  demo 
+}
+//常量的导入
+//getdemo.js
+import { demo } from './public'
+console.log(demo ) // '使用export导出的常量,不可以重命名该常量,需要用大括号'
+//函数的导出与导入
+//函数的导出
+//fn.js
+export function fn() {
+  console.log("使用export导出的fn,不可以重命名该函数,需要用大括号")
+}
+//函数的导入
+//getFn.js
+import { fn } from './fn.js'
+fn(); // "使用export导出的fn,不可以重命名该函数,需要用大括号"
+
+//全部导出与导入
+//导出
+//allData.js
+export default function allData() {
+console.log("使用export default 导出的数据,可以重命名该函数,不需要用大括号")
+}
+//getAllData.js
+//导入
+ import reName_AllData from './allData.js'
+reName_AllData()//"使用export default 导出的数据,可以重命名该函数,不需要用大括号"
+
+进一步封装：
+// getIndexData.js : 提取url 同一管理 导出函数 方便更换接口
+import reqeust from './request'
+export function getBannerData() {
+  return reqeust({
+    url: 'wo/zhen-de/shi/api/banner',
+  })
+}
+
+page页面： 只负责调用
+import { getBannerData} from '../../request/getIndexData'
+onload(){
+  getBannerData().then(res => {
+      console.log(res)
+      //这里就可以对数据进行操作了
+    }).catch(err => console.log(err))
+}
+
+
