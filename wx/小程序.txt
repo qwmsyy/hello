@@ -108,4 +108,15 @@ EventChannel.once(string eventName, function fn, any args) 监听一个事件一
 
 小程序中页面栈最多十层
 
+tab切换选中与不选中样式
+<view style="display: flex">
+	<view style="flex: 1">
+		<view style="text-align: center;color: #FFC107;">Mine</view>
+		<view class='line' style="width: 40rpx;height: 4rpx;background-color: #FFC107;margin: 4rpx auto;"></view>
+	</view>
+	<view style="flex: 1">
+		<view style="text-align: center">Home</view>
+	</view>
+</view>
+
 
