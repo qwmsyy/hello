@@ -1,0 +1,7 @@
+uni 和微信类似（应该是微信小程序和uni类似）
+uview中封装了网络请求 相当于挂载什么的
+vue 封装 axios
+service uni
+request vue 有interceptor拦截器
+
+尽量加上 showLoading hideLoging 方法 提高用户体验
