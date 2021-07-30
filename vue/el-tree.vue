@@ -80,7 +80,7 @@
 				arr.forEach(value => {
 					this.$refs.tree.setChecked(value, true, false);
 				})
-				// 父节点选中 子节点不全选？？？
+				// 父节点选中 子节点不全选？？？ 那你tm后端只传叶子节点的值 不就行了
 				// 此方法父节点选中 子节点会全选中
 				// this.$refs.tree.setCheckedKeys(arr)
 			},
