@@ -1,0 +1,122 @@
+color ：
+主灰色 #EcEcEc
+次灰色 #F7F7F7
+
+字体浅灰色 #B1B1B1
+		#777
+题目黑色 #212121
+
+绿色#2A9F49 #00BF63
+蓝 #2D8ADA
+
+弹窗、蒙版的关闭思路
+1. 通过点击关闭的按钮，图片进行关闭
+2. 点击灰色区域关闭
+	小程序貌似没有类似于vue的.self阻止事件向下传递功能 ，点击内容区域会触发蒙版区域的点击事件
+	处理给内容区域点击，但不做处理，并且阻止其冒泡行为 ，这样在点击内容区域就不会触发蒙版区域的点击事件
+	
+慎用框架 特别是样式中带'!important'的 改变radio样式 死活该不了， 最后发现colorUI中设置的样式 而且还是带!important
+radio 需要外层的radiogroup 来监听属性的变化
+红色的单选框：
+/*radio未选中时样式 */
+radio .wx-radio-input{
+	height: 30rpx;
+	width: 30rpx;
+	margin-top: -4rpx;
+	border-radius: 50%;
+	border: 2rpx solid #999;
+	background: #fff!important;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked {
+	border-color: #FF5757!important;
+	/* 居中 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before {
+	/* 去除对号 */
+	content: '';
+	width: 20rpx;
+	height: 20rpx;
+	border-radius: 50%;
+	background-color: #FF5757;
+}
+
+设置微信对象值 '好像不要[]也行'
+this.setData({
+	['arr[' + index + '].value']: 1
+})
+
+视图中双重循环
+子循环中 index 会覆盖 父循环的 index 
+而且最内层 能直接使用 item.v
+index 父索引 idx 子索引
+<view wx:for="{{Lists}}" wx:key="{{index}}">
+	<view class="item_title">{{item.name}}</view>
+	<view class="row_flex_warp">
+		<view class="row_flex_warp_item {{item.select?'item_selected':''}}" wx:for="{{item.list}}"
+			wx:for-index="idx" wx:key="{{item.id}}" catchtap="selItem" data-id="{{item.name}}"
+			data-index="{{index}}" data-idx="{{idx}}">
+			{{item.name}}
+		</view>
+	</view>
+</view>
+
+let id = e.currentTarget.dataset.id
+
+vedio上下黑边 objectFit="cover"
+
+返回上个页面带参数
+当前页面：
+var pages = getCurrentPages();   //当前页面
+var prevPage = pages[pages.length - 2];   //上一页面
+prevPage.setData({
+       //直接给上一个页面赋值
+      addresschose: that.data.address[index],
+});
+wx.navigateBack({
+     //返回
+     delta: 1
+})
+不需要下面的似乎也可以
+要跳转的页面：
+onShow: function () {
+    let pages = getCurrentPages();
+    let currPage = pages[pages.length - 1];
+    if (currPage.data.addresschose) {
+        this.setData({
+            //将携带的参数赋值
+            address: currPage.data.addresschose,
+            addressBack: true
+      });
+    console.log(this.data.address, '地址')
+    }
+}
+
+一个页面由另一个页面通过 wx.navigateTo 打开，这两个页面间将建立一条数据通道：
+被打开的页面可以通过 this.getOpenerEventChannel() 方法来获得一个 EventChannel 对象；
+wx.navigateTo 的 success 回调中也包含一个 EventChannel 对象。
+这两个 EventChannel 对象间可以使用 emit 和 on 方法相互发送、监听事件。
+EventChannel.emit(string eventName, any args) 触发一个事件
+EventChannel.off(string eventName, function fn, any args) 取消监听一个事件。给出第二个参数时，只取消给出的监听函数，否则取消所有监听函数
+EventChannel.on(string eventName, function fn) 持续监听一个事件
+EventChannel.once(string eventName, function fn, any args) 监听一个事件一次，触发后失效
+文档是真tmd的简略 。。。。
+
+小程序中页面栈最多十层
+
+tab切换选中与不选中样式
+<view style="display: flex">
+	<view style="flex: 1">
+		<view style="text-align: center;color: #FFC107;">Mine</view>
+		<view class='line' style="width: 40rpx;height: 4rpx;background-color: #FFC107;margin: 4rpx auto;"></view>
+	</view>
+	<view style="flex: 1">
+		<view style="text-align: center">Home</view>
+	</view>
+</view>
+
+
