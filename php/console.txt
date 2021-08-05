@@ -1,0 +1,1 @@
+file_put_contents('log.txt',输入的内容,FILE_APPEND);
