@@ -1,0 +1,16 @@
+data 为什么是函数而不是对象（在官方开始的示例中，data为对象，但在项目中是函数？）
+	js本身的特性中，js中只有函数构成作用域（只有函数的{}构成作用域，对象的{}以及if(){}都不构成作用域），
+	当data是一个函数时，每个组件实例都有自己的作用域，每个实例相互独立，不会互相影响。
+	如果是对象时，每个组件的data都是内存的同一个地址，一个组件中的数据改变了其他也改变了。
+	除非各组件之间的变量名称不重复，两者并没有什么区别，可能性不大。。。。
+	链接： https://cloud.tencent.com/developer/article/1648369
+
+对于数组，对象的检测
+	由于 JavaScript 的限制，Vue 不能检测数组和对象的变化，
+	因此，可能导致某些操作之后，视图层并没有变化（似乎可以使用forceupdate() 来强制更新，但。。。）
+	object： Vue.set(object, propertyName, value) 方法向嵌套对象添加响应式 property
+		Vue.set(vm.someObject, 'b', 2)
+	array: 也可使用set方法
+	vm.$set 是Vue.set 的别名  this.set()
+		Vue.nextTick(callback) 可在Dom更新完成之后调用
+	链接：https://cn.vuejs.org/v2/guide/reactivity.html
