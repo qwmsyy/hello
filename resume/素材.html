@@ -325,10 +325,32 @@
 		src: url('./华文行楷.ttf') format('truetype');
 	}
 </style>
+<style id="remixicon">
+	@font-face{
+		font-family: remixicon;
+		src: url('./remixicon.ttf') format("truetype");
+	}
+	[class*=" ri-"],[class^=ri-]{
+		font-family:remixicon!important;
+		font-style:normal;
+		font-display:swap;
+		-webkit-font-smoothing:antialiased;
+		-moz-osx-font-smoothing:grayscale;
+	}
+	.ri-apps-2-fill:before{
+		content:"\ea41"
+	}
+	.ri-apps-2-line:before{
+		content:"\ea42"
+	}
+</style>
 <div style="font-family: font-787; font-size: 97.2222px;" data-font-id="787">渔翁夜傍西岩宿<br>晓汲we清湘燃楚竹</div>
 <img src="./165104ba53p7dcL7lToEfM.png"></img>
 <div>
 	<text style="font-family: 'Script MT Bold';">中国制造</text>
+</div>
+<div class="ri-apps-2-fill">
+	<span>89</span>
 </div>
 <!--
 <div style="margin-bottom: 0px;">
