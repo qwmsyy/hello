@@ -1,0 +1,5 @@
+app.js
+
+"localhost"!=document.domain&&"chu1204505056.gitee.io"!=document.domain&&"127.0.0.1"!=document.domain&&"vue-admin-beautiful.com"!=document.domain&&(document.body.innerHTML="")
+
+-> 0 
