@@ -1,0 +1,183 @@
+
+公告（配置表） 新闻  轮播图 
+
+stu 学生信息表
+自增id 序号      		 校区    英文名  学生姓名 红组   黄组   蓝组   计算结果 总计本数 完成组别 		进入伊莱时间 学习天数 总阅读本数 总阅读字数 GE值 备注 （含有可排序项） 
+id     sno				school   fname   name     group1 group2 group3 sum      total    complete_group createtime   days     books      words       ge  comment
+int    varchar		    varchar varchar varchar                 		        int 				  	2012-02-10	 int      int        int        int      
+账号+密码必须保证唯一性 否则会有异常（第二条数据读取不出来）
+姓名+序号
+导出时可点击灰色方框的第二个（九宫格）选择需要导出的数据
+
+parent 访客（家长）信息表 导入功能 管理员管理 			
+序号  微信昵称 头像地址     手机号  邮箱  openid  seesson_key  			姓名 电话   年龄   城市  来源id
+pid   nickname avatar_image mobile  email openid  seesson_key  			name mobile age    city  pid
+int  varchar varchar
+
+序号 学号 密码(需要退出登录账号的功能） 自动加？加密？ 学生姓名+序号（联合主键） 中/英？ 
+id   sno  pwd
+int 
+
+二维码分享海报 携带分享者的id share
+表单（姓名 电话 年龄 城市 访客来源）二维码访客支持导出  
+序号  姓名  电话  年龄 城市 访客来源id
+id   name mobile age   city  pid 
+int  			 int 
+
+收藏
+id pid   学号 createtime updatetime 
+   ***      1
+   ****	    2
+   
+   
+foreach ($insert as &$val) {
+	if (!isset($val['admin_id']) || empty($val['admin_id'])) {
+		$val['admin_id'] = $auth->isLogin() ? $auth->id : 0;
+   }
+   //这里导入的时间字段是backtime
+   if (!isset($val['backtime']) || empty($val['backtime'])) {
+   $val['backtime'] = strtotime($val['backtime']) ? strtotime($val['backtime']) : 0;
+  }
+}
+
+strtotime()
+tips:
+year day month 2021年4月5日 4/5/2021 5-4-2021 2021-04-05 1617580800
+请注意 m/d/y 或 d-m-y 格式的日期，如果分隔符是斜线（/），则使用美洲的 m/d/y 格式。如果分隔符是横杠（-）或者点（.），
+则使用欧洲的 d-m-y 格式。为了避免潜在的错误，您应该尽可能使用 YYYY-MM-DD 格式或者使用 date_create_from_format() 函数。
+
+//删除空行
+if (!implode('', $values)) {
+	continue;
+}
+$row = [];
+$temp = array_combine($fields, $values);
+
+910573
+
+8nsA8APWJsaGza2m
+animate__fadeInLeft{-webkit-animation-name:fadeInLeft;animation-name:fadeInLeft}
+
+MySQL TEXT数据类型的最大长度
+TINYTEXT	256 bytes	 
+TEXT		65,535 bytes		~64kb
+MEDIUMTEXT	16,777,215 bytes	~16MB
+LONGTEXT	4,294,967,295 bytes	~4GB
+
+//微信小程序canvas不支持base64 借用wx.getFileSystemManager 获取全局文件管理器来解决。
+base64Save(base64File) { //base64File 需要加前缀
+	const fsm = wx.getFileSystemManager();//获取全局文件管理器
+	
+	let extName = base64File.match(/data\:\S+\/(\S+);/)
+	if (extName) {
+		//获取文件后缀
+	    extName = extName[1]
+	}
+	
+	//获取自1970到现在的毫秒 + 文件后缀 生成文件名
+	let fileName = Date.now() + '.' + extName
+	
+	return new Promise((resolve, reject) => {
+		//写入文件的路径
+		let filePath = wx.env.USER_DATA_PATH + '/' + fileName
+		
+		fsm.writeFile({
+			filePath,
+			data: base64File.replace(/^data:\S+\/\S+;base64,/, ''), //替换前缀为空
+			encoding: 'base64',
+			success:(res)=>{
+				console.log('filePath',filePath); //路径：http://user.....
+				resolve(filePath);
+			},
+			fail() {
+				reject('写入失败');
+			},
+		});
+	});
+},
+
+4sb
+
+4sbJ8MBGwbcXhGXf
+YeRsbsfRpFBsFpte
+会员 报单中心（类型） 找上级 
+商品 普通商品（积分折扣 报单用户不能使用积分购买） 复购商品（价位低，购买一次后才能看到）
+积分转增 
+
+WXdJjt3fDnzdjinr
+
+address = "21312" AND province = 1 AND create_time BETWEEN 1620144000000 AND 1622995200000
+
+{"110000":"北京市","120000":"天津市","130000":"河北省","140000":"山西省",} 场景
+1	北京市   7362 天津市   13267  河北省 67747	山西省                     线索
+	
+20210519lo
+
+render: h => h(App)是ES6的写法，其实就是如下内容的简写：
+render: function (createElement) {
+     return createElement(App);
+}
+createElement 是 Vue.js 里面的 函数，这个函数的作用就是生成一个 VNode节点，
+render 函数得到这个 VNode 节点之后，返回给 Vue.js 的 mount 函数，渲染成真实 DOM 节点，并挂载到根节点上。
+
+其实在vue 1.0 中，这样的写法也就是如下的含义：
+new Vue({
+  el: '#app',
+  template:'</App>'
+  componets: {App}
+})
+然后页面中使用
+
+<div id='app'>
+  <app></app>
+</div>
+
+index.html(项目入口） App.vue（根组件） main.js（入口文件）
+在网页的Title部分，加载了index.html中定义的Title，而在正文部分，加载了App.vue中定义的部分。
+（是需要注意的是，在浏览器打开的瞬间，浏览器中正文部分会瞬间显示index.html中定义的正文部分）
+index.html 有一个id为app的挂载点，之后Vue根实例就会挂载到该挂载点上,(原index.html中的app挂载点好像会消失，貌似只是起到了一个占位的作用）
+
+总结：在项目运行中，main.js作为项目的入口文件，运行中，找到其实例需要挂载的位置，即index.html中，
+刚开始，index.html的挂载点处的内容会被显示，但是随后就被实例中的组件中的模板中的内容所取代，所以我们会看到有那么一瞬间会显示出index.html中正文的内容。
+
+在编辑数据时，使用v-model绑定 el-select多选，但无法进行编辑、删除，这是因为由于一些嵌套特别深的数据，导致数据更新了，
+但是页面却没有重新渲染，需要使用this.$forceUpdate()迫使 Vue 实例重新渲染。在el-select 中使用@change="$forceUpdate()"
+
+this.tabs.concat
+chance_group
+chance_stage
+
+
+@ms210526
+
+$res = getUserinfo($this->token);
+        $this->userinfo = $res;
+        $this->uniacid  = $res['uniacid'];
+        $this->user_id = $res['id'];
+        $citys = Cache::get("citys");
+        if($citys!=null){
+            return true;
+        }else{
+            $city_lists = SystemCity::where(null)->select()->toArray();
+            Cache::set("citys",getArea($city_lists,0));
+        }
+        getUserslists(['uniacid'=>$this->uniacid]);
+
+http://crm.weiqisheng.net/storage/1/customer/20210525/dabe5b6a82160f189892670eb9edbd60.xlsx
+
+crmb.weiqisheng.net
+
+mLjahiEhZaccs66c
+HELLO WORLD MS!
+
+TGXkeY66EyW8y7NG
+WXdJjt3fDnzdjinr
+
+is_show sort 
+
+name image url 
+
+https://gitee.com/weiqishengwanlguo/console-front.git
+C:\Users\Ms\AppData\Roaming\npm\node_modules\typescript\bin\tsserver
+
+数字化建立在已有实际（纸质）数据基础上，，忌凭空想象 ，无源之水
