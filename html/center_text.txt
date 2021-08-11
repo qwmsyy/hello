@@ -1,0 +1,7 @@
+1. float + margin-right or margin-left: 50%;    但是float会脱离正常文本流，导致某些情况下会变形
+	
+2. text-align: center;
+
+3. dvi align - float flexbox;  use display:flex to define a parent (flexbox) 之后在容器中的div 就可
+	使用flexbox的属性
+	flex-direction ，justify-content is different directions
