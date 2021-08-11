@@ -1,0 +1,77 @@
+var 定义的变量 作用域是全局的  函数作用域（定义在函数内部）
+	for (var i = 0; i < 3; i++) {
+	  numArray.push(i);
+	}
+	与
+	var i;
+	for (i = 0; i < 3; i++) {
+	  numArray.push(i);
+	}
+	效果一样
+	
+	var printNumTwo;
+	for (var i = 0; i < 3; i++) {
+	  if (i === 2) {
+		printNumTwo = function() {
+		  return i;
+		};
+	  }
+	}
+	console.log(printNumTwo());
+	会打印3而不是2
+	
+	重复定义相同名称的变量 不会保错 只会覆盖 在小项目中一般并不会出错 但在大项目中，会有潜在的问题
+	而且很难发现
+	
+let 块 语句 表达式 可以避免上述var所带来的错误 并且会有错误提示
+	与Java不同 在被包含的不同作用域中 可重复定义同名变量
+	如下：Java中会报错（已经定义过）
+function checkScope() {
+  let i = 'function scope';
+  {
+    let i = 'block scope';
+    console.log('Block scope i is: ', i);
+  }
+  console.log('Function scope i is: ', i);
+  return i;
+}
+
+let i = checkScope()
+console.log(i)
+
+
+Block scope i is:  block scope
+Function scope i is:  function scope
+function scope
+
+const 不能改变的只是 标识符 （应该是对应的地址，而地址所关联的内容还可以改变）
+
+Object.freeze() 避免对象属性值被修改（即使属性值被定义成const）
+
+解构
+let arr1 = [1,12];
+let arr2 = [2,21];
+
+let arr3 = [...arr1,...arr2];
+let arr3 = arr1.concat(arr2);
+
+const [a,b,...list] = arg
+截取arg数组的前两位
+
+`` ${}
+
+a:a, -> a,
+
+in obj
+fun: function(){} -> fun(){} 去掉: function
+
+get writer() {} set writer(updatedAuthor) {}
+
+export import    {}
+	export default  no {} any name
+
+Promise
+	resolve reject 
+	then catch
+
+
