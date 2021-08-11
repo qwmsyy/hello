@@ -1,0 +1,27 @@
+基础：
+1.变量引用
+	以‘$’开始 
+	可用‘-’, ‘_’ $a-b与$a_b指向同一个变量 但在纯css中，该规则不适用 比如类，ID或属性选中器
+
+2.嵌套规则
+	避免重复写选择器 
+	空格  后代选择器
+	‘&’ 父选择器
+		编译前：
+		article a {
+		  color: blue;
+		  &:hover { color: red }
+		}
+		编译后：（article a 和 :hover 之间没用空格）
+		article a { color: blue }
+		article a:hover { color: red }
+		还可以在父选择器之前添加选择器
+
+	@import导入
+	
+	继承 @extend 继承另一个选择器定义的所有样式
+	
+	混入 @mixin
+	
+复用 write less, do more
+		
