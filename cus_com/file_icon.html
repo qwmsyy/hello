@@ -1,0 +1,42 @@
+<div class="box">
+    app.js
+</div>
+<style>
+    .box{
+        height: 80px;
+        width: 60px;
+        border: 1px #1b1f23 solid;
+        margin: 100px auto;
+        position: relative;
+        z-index: 1;
+        line-height: 80px;
+        text-align: center;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+    }
+    .box::before{
+        content: '';
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        width: 25px;
+        height: 25px;
+        border-bottom: 1px black solid;
+        border-left: 1px black solid;
+        border-top: 1px white solid;
+        border-right: 1px white solid;
+        border-bottom-left-radius: 5px;
+        z-index: 2;
+    }
+    .box::after{
+        content: '';
+        position: absolute;
+        top: 7px;
+        right: 7px;
+        width: 36px;
+        height: 36px;
+        border-top: 1px black solid;
+        transform: rotate(45deg);
+        z-index: 2;
+    }
+</style>
