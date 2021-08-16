@@ -1,0 +1,34 @@
+prototype.prop 定义在类中 实例中自动拥有该属性(prop) 
+
+	避免 在类中直接定义私有常量-own property-（所有实例的该值都是一样的，比如定义动物的腿的数量） 在实例化时 存在大量重复数据
+	
+	own properties 可以通过hasOwnProperty 进行判断是否存在
+	
+	prototype - let prop in beagle 循环获取全部属性值 不属于own properties 就是prototypeProps
+	
+		function Dog(name) {
+		  this.name = name;
+		}
+
+		Dog.prototype.numLegs = 4;
+
+		let beagle = new Dog("Snoopy");
+
+		let ownProps = [];
+		let prototypeProps = [];
+
+		// Only change code below this line
+
+		for(let prop in beagle){
+		  if(beagle.hasOwnProperty(prop)){
+			ownProps.push(prop);
+		  }else
+			prototypeProps.push(prop)
+		}
+
+		console.log(ownProps)
+
+		console.log(prototypeProps)
+	
+	prototype 对象
+	{} custructor
