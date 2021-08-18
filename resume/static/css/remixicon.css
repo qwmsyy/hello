@@ -1,0 +1,25 @@
+@font-face{
+  font-family: remixicon;
+  src: url('../icons/remixicon.ttf') format("truetype");
+}
+[class*=" ri-"],[class^= "ri-"]{
+  align-items: end;
+  font-family:remixicon !important;
+  font-style:normal;
+  font-display:swap;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color: var(--gray-75);
+}
+.ri-time-fill:before {
+  content: "\F20E";
+}
+.ri-money-cny-circle-fill:before {
+  content: "\EF60";
+}
+.ri-wechat-fill:before {
+  content: "\F2B5";
+}
+.ri-mail-fill:before {
+  content: "\EEF3";
+}

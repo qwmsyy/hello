@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --theme-color: #0a0a23;
+  --yellow-gold: #ffbf00;
+  --gray-00: #fff;
+  --gray-05: #f5f6f7;
+  --gray-10: #dfdfe2;
+  --gray-15: #d0d0d5;
+  --gray-45: #858591;
+  --gray-75: #3b3b4f;
+  --gray-80: #2a2a40;
+  --gray-85: #1b1b32;
+  --gray-90: #0a0a23;
+  --purple-light: #dbb8ff;
+  --purple-dark: #5a01a7;
+  --yellow-light: #ffc300;
+  --yellow-dark: #4d3800;
+  --blue-light: #99c9ff;
+  --blue-light-translucent: rgba(153,201,255,0.3);
+  --blue-dark: #002ead;
+  --blue-dark-translucent: rgba(0,46,173,0.3);
+  --green-light: #acd157;
+  --blue-mid: #198eee;
+  --purple-mid: #9400d3;
+  --green-dark: #00471b;
+  --red-light: #ffadad;
+  --red-dark: #850000;
+  --love-light: #f8577c;
+  --love-dark: #f82153;
+  --editor-background-light: #fffffe;
+  --editor-background-dark: #2a2b40;
+}
+.main-bgc {
+  background-color: var(--gray-05);
+}
+.part-title{
+  position: relative;
+  display: block;
+  padding: 12px 24px 12px 20px;
+  margin: 10px 0 0px 0;
+  text-decoration: none !important;
+  text-shadow: 0.1px 0.1px 0.1px var(--gray-90);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: bolder;
+  font-size: larger
+}
+.part-title:before{
+  position: absolute;
+  top: 14px;
+  left: -12px;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  border-radius: 100%;
+}
+.first{
+  background-image: linear-gradient(to right,#E3ECFF, #fafafa);
+  border-left: 4px solid #0FB3DE;
+}
+.first:before{
+  content: "1";
+  background-color: #0FB3DE;
+}
+.second{
+  background-image: linear-gradient(to right,#E3ECFF, #fafafa);
+  border-left: 4px solid #0FB3DE;
+}
+.second:before{
+  content: "2";
+  background-color: #0FB3DE;
+}
+.third{
+  background-image: linear-gradient(to right,#E3ECFF, #fafafa);
+  border-left: 4px solid #0FB3DE;
+}
+.third:before{
+  content: "3";
+  background-color: #0FB3DE;
+}
+.content-box{
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: inset 0 0 5px var(--gray-90);
+}
+.line {
+  height: 1px;
+  margin: 10px 0;
+  background-color: #1b1f23;
+  opacity: 0.3;
+}
+.term-block {
+  padding: 1px 5px;
+  margin: 0 3px;
+  font-size: smaller;
+  color: var(--gray-75);
+  background-color: var(--gray-15);
+  border-radius: 3px;
+}
+.e-charts{
+  color: #F2FAFD;
+  background-color: #B03D5C;
+}
+.element-ui{
+  color: #3C9CFE;
+  background-color: #e6effb
+}
+.u-view {
+  color: #2F4051;
+  background-color: #e6effb;
+}
+.color-ui {
+  color: #F2FAFD;
+  background: linear-gradient(to right,#0084F9, #00B5B7);
+}
+.vue {
+  color: #F2FAFD;
+  background-color: #3DB682;
+}
+.uni-app {
+  color: #FFFFFF;
+  background-color: #29983D;
+}
+.think-php {
+  color: #FFFFFF;
+  background-color: #6DB53B;
+}
+.github {
+  color: #FFFFFF;
+  background-color: #282D32;
+}
+.fast-admin {
+  color: #FFFFFF;
+  background-color: #00BA9B;
+}
+.java {
+  font-weight: bolder;
+  color: #fff;
+  background-color: #E20B18;
+}
+.font-grey-color {
+  color: var(--gray-45);
+}
+.text-shadow {
+  text-shadow: 0.1px 0.1px 0.1px var(--gray-90);
+}
+.my-info, .my-edu, .my-job {
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px var(--gray-15) solid;
+  border-radius: 10px;
+  border-top-left-radius: 0
+}
+.my-info::before {
+  position: absolute;
+  top: -0.7em;
+  left: 0;
+  z-index: 2;
+  padding: 5px 10px;
+  font-size: small;
+  font-weight: bold;
+  content: '个人信息';
+  background-color:rgba(255,255,255,1);
+  border-top: 1px var(--gray-15) solid;
+  border-top-left-radius: 0.7em;
+  border-top-right-radius: 0.7em;
+}
+.my-edu::before {
+  position: absolute;
+  top: -0.7em;
+  left: 0;
+  z-index: 2;
+  padding: 5px 10px;
+  font-size: small;
+  font-weight: bold;
+  content: '教育背景';
+  background-color:rgba(255,255,255,1);
+  border-top: 1px var(--gray-15) solid;
+  border-top-left-radius: 0.7em;
+  border-top-right-radius: 0.7em;
+}
+.my-job::before {
+  position: absolute;
+  top: -0.7em;
+  left: 0;
+  z-index: 2;
+  padding: 5px 10px;
+  font-size: small;
+  font-weight: bold;
+  content: '求职意向';
+  background-color:rgba(255,255,255,1);
+  border-top: 1px var(--gray-15) solid;
+  border-top-left-radius: 0.7em;
+  border-top-right-radius: 0.7em;
+}
+.experience-box {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px var(--gray-15) solid;
+  border-radius: 10px;
+}
+.experience-box .title {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  border-bottom: 1px var(--gray-15) solid;
+}
+.experience-box .intro {
+  margin-bottom: 10px;
+  color: var(--gray-75);
+}
+.first-box {
+  display: flex;
+  padding: 20px;
+  padding-bottom: 0;
+  margin-bottom: 30px;
+}
+.second-box, .third-box, .forth-box{
+  padding: 0 20px;
+  margin-bottom: 30px
+}
+.first-box-left {
+  flex: 1 0 25%;
+}
+.first-box-right {
+  flex: 3 0 75%;
+  flex-wrap: wrap;
+  padding-right: 20px;
+  margin-left: 20px;
+  overflow: hidden;
+}
+.first-box-right-top, .first-box-right-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.normal-line-height {
+  line-height: 1.8em
+}
+.smaller-line-height {
+  line-height: 1.5em;
+}
+.padding-left {
+  padding-left: 5px;
+}
+.head-image-box {
+  width: 100px;
+  height: 130px;
+  margin: 10px auto;
+  background-image: url('../img/ms.jpg');
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: inset #9E9E9E  0 0 0 1px,inset #f5da36 0 0 0 3px,inset #9E9E9E 0 0 0 5px;
+}
+.h-text-center {
+  text-align: center;
+}
+.smaller-font {
+  font-size: smaller;
+}
+.italic-font {
+  font-style: italic
+}
+.margin-bottom {
+  margin-bottom: 10px
+}
+.flex-box{
+  display: flex;
+}
+.flex-box-item {
+  flex: 1 0 100%;
+}
+.hello-world-box {
+  display: flex;
+  margin-bottom: 30px;
+  overflow: hidden;
+  background-color:#282c34;
+}
+.hello-world-box .no {
+  padding: 5px 5px 5px 20px;
+  color: #abb2bf !important;
+  border-right: 1px solid #c5c5c5;
+}
+.hello-world-box .content {
+  margin-left: 20px;
+  line-height: 2em;
+  color: #abb2bf;
+}
+.hello-world-box .content .dot1 {
+  color: #690;
+}
+.hello-world-box .content .dot2 {
+  color: #61aeee;
+}
+.hello-world-box .content .dot3 {
+  color: #c678dd;
+}
+.link {
+  padding: 20px;
+  font-size: smaller;
+  font-style: italic;
+  color: var(--gray-15);
+  text-align: right;
+}
+.eng-font {
+  font-family: cursive;
+  font-size: small;
+  font-style: italic;
+  text-shadow: 0 0 0.1px #000;
+}
